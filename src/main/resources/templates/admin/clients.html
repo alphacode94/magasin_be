@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{fragments/layouts/base_layout_admin}">
+<head>
+<title>Clients</title>
+</head>
+<body>
+	<!-- <section th:fragment="content"> -->
+	<div class="page-body" layout:fragment="content">
+		<div class="container-fluid">
+			<div class="page-title">
+				<div class="row">
+					<div class="col-sm-6">
+						<h3>Clients</h3>
+					</div>
+					<div class="col-sm-6">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="index.html"> <svg
+										class="stroke-icon">
+                          <use
+											href="../assets/svg/icon-sprite.svg#stroke-home"></use>
+                        </svg></a></li>
+							<li class="breadcrumb-item">Configurations</li>
+							<li class="breadcrumb-item active">Clients</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Container-fluid starts-->
+		<div class="container-fluid list-product-view product-wrapper">
+			<div class="row">
+				
+				<div class="col-12">
+					<div class="card">
+						<div class="card-header card-no-border text-end">
+							<div class="card-header-right-icon">
+									<button class="btn btn-primary f-w-500" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
+									class="fa fa-plus pe-2"></i>Add Clients</button>
+							</div>
+						</div>
+						<div class="card-body px-0 pt-0">
+							<div class="list-product">
+								<div
+									class="recent-table table-responsive custom-scrollbar product-list-table">
+									<div id="product-list-view_wrapper"
+										class="dt-container dt-empty-footer">
+									<!-- 	<div class="dt-layout-row">
+											<div class="dt-layout-cell dt-start ">
+												<div class="dt-length">
+													<select name="product-list-view_length"
+														aria-controls="product-list-view" class=""
+														id=""><option value="5">5</option>
+														<option value="10">10</option>
+														<option value="15">15</option>
+														<option value="20">20</option></select><label for="">
+														entries per page</label>
+												</div>
+											</div>
+											<div class="dt-layout-cell dt-end ">
+												<div class="dt-search">
+													<label for="dt-search-0">Search:</label><input
+														type="search" class="dt-input" id="dt-search-0"
+														placeholder="" aria-controls="product-list-view">
+												</div>
+											</div>
+										</div> -->
+										<div class=" dt-layout-table">
+											<div class="dt-layout-cell ">
+												<table class="table dataTable" id="product-list-view"
+													aria-describedby="product-list-view_info">
+													<colgroup>
+														<col>
+														<col>
+														<col>
+														<col>
+														<col>
+														<col>
+														<col>
+														<col>
+														<col>
+													</colgroup>
+													<thead>
+														<tr role="row">
+															<th data-dt-column="0" rowspan="1" colspan="1"
+																class="dt-select dt-orderable-none" aria-label=""><span
+																class="dt-column-title"></span><span
+																class="dt-column-order"></span><input
+																class="dt-select-checkbox" type="checkbox"
+																aria-label="Select all rows"></th>
+															<th data-dt-column="1" rowspan="1" colspan="1"
+																class="dt-orderable-asc dt-orderable-desc dt-ordering-asc"
+																aria-sort="ascending"
+																aria-label=" Product Name: Activate to invert sorting"
+																tabindex="0"><span class="dt-column-title"
+																role="button"> <span class="c-o-light f-w-600">Client
+																		Name</span></span><span class="dt-column-order"></span></th>
+															<th data-dt-column="2" rowspan="1" colspan="1"
+																class="dt-orderable-asc dt-orderable-desc"
+																aria-label=" SKU: Activate to sort" tabindex="0"><span
+																class="dt-column-title" role="button"> <span
+																	class="c-o-light f-w-600">Number</span></span><span
+																class="dt-column-order"></span></th>
+															<th data-dt-column="3" rowspan="1" colspan="1"
+																class="dt-orderable-asc dt-orderable-desc"
+																aria-label=" Category: Activate to sort" tabindex="0"><span
+																class="dt-column-title" role="button"> <span
+																	class="c-o-light f-w-600">Email</span></span><span
+																class="dt-column-order"></span></th>
+															<th data-dt-column="4" rowspan="1" colspan="1"
+																class="dt-type-numeric dt-orderable-asc dt-orderable-desc"
+																aria-label=" Price: Activate to sort" tabindex="0"><span
+																class="dt-column-title" role="button"> <span
+																	class="c-o-light f-w-600">Address</span></span><span
+																class="dt-column-order"></span></th>
+															<th data-dt-column="5" rowspan="1" colspan="1"
+																class="dt-type-numeric dt-orderable-asc dt-orderable-desc"
+																aria-label=" Qty: Activate to sort" tabindex="0"><span
+																class="dt-column-title" role="button"> <span
+																	class="c-o-light f-w-600">City</span></span><span
+																class="dt-column-order"></span></th>
+															<th data-dt-column="6" rowspan="1" colspan="1"
+																class="dt-orderable-asc dt-orderable-desc"
+																aria-label=" Status: Activate to sort" tabindex="0"><span
+																class="dt-column-title" role="button"> <span
+																	class="c-o-light f-w-600">Status</span></span><span
+																class="dt-column-order"></span></th>
+															<!-- <th data-dt-column="7" rowspan="1" colspan="1"
+																class="dt-type-numeric dt-orderable-asc dt-orderable-desc"
+																aria-label=" Rating: Activate to sort" tabindex="0"><span
+																class="dt-column-title" role="button"> <span
+																	class="c-o-light f-w-600">Rating</span></span><span
+																class="dt-column-order"></span></th> -->
+															<th data-dt-column="8" rowspan="1" colspan="1"
+																class="dt-orderable-asc dt-orderable-desc"
+																aria-label=" Action: Activate to sort" tabindex="0"><span
+																class="dt-column-title" role="button"> <span
+																	class="c-o-light f-w-600">Action</span></span><span
+																class="dt-column-order"></span></th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr th:each="client : ${clients}" class="product-removes">
+															<td class="dt-select"><input aria-label="Select row"
+																class="dt-select-checkbox" type="checkbox"></td>
+															<td class="sorting_1">
+																<div class="product-names">
+																	<!-- <div class="light-product-box">
+																		<img class="img-fluid"
+																			src="../assets/images/dashboard-8/product-categories/laptop.png"
+																			alt="laptop">
+																	</div> -->
+																	<p th:text="${client.clientName}"></p>
+																</div>
+															</td>
+															<td>
+																<p class="c-o-light" th:text="${client.number}"></p>
+															</td>
+															<td>
+																<p class="c-o-light" th:text="${client.email}"></p>
+															</td>
+															<td class="dt-type-numeric">
+																<p class="c-o-light" th:text="${client.address}"></p>
+															</td>
+															<td class="dt-type-numeric">
+																<p class="c-o-light" th:text="${client.city}"></p>
+															</td>
+															<td>
+								<span th:if="${client.status == 'Active'}" class="badge badge-light-success" th:text="${client.status}"></span>
+                <span th:if="${client.status == 'Inactive'}" class="badge badge-light-secondary" th:text="${client.status}"></span>
+            </td>
+															<td>
+															<!-- 	<div class="btn-group-square btn-group">
+																	<a class="btn btn-sm" href="add-products.html"> 
+															<span><i class="fa-solid fa-pencil-square text-primary"></i></span>
+											</a>
+											<a class="btn btn-sm" href="#!"> <span><i class="fa-solid fa-trash text-danger"></i></span></a>
+																</div> -->
+																<div class="btn-group" role="group" aria-label="Basic outlined example">
+           <a class="btn btn-pill btn-outline-primary btn-sm" type="button" href="123"><i class="fa-solid fa-pencil-square"></i></a>
+           <button class="btn btn-pill btn-outline-danger btn-sm" type="button" href="123"><i class="fa-solid fa-trash text-danger"></i></button>
+         </div>
+															</td>
+														</tr>
+														
+														
+
+
+													</tbody>
+													<tfoot></tfoot>
+												</table>
+												<!--   </div></div><div class="dt-layout-row"><div class="dt-layout-cell dt-start "><div class="dt-info" aria-live="polite" id="product-list-view_info" role="status">Showing 1 to 14 of 28 entries</div></div><div class="dt-layout-cell dt-end "><div class="dt-paging paging_full_numbers"><button class="dt-paging-button disabled first" role="link" type="button" aria-controls="product-list-view" aria-disabled="true" aria-label="First" data-dt-idx="first" tabindex="-1">«</button><button class="dt-paging-button disabled previous" role="link" type="button" aria-controls="product-list-view" aria-disabled="true" aria-label="Previous" data-dt-idx="previous" tabindex="-1">‹</button><button class="dt-paging-button current" role="link" type="button" aria-controls="product-list-view" aria-current="page" data-dt-idx="0" tabindex="0">1</button><button class="dt-paging-button" role="link" type="button" aria-controls="product-list-view" data-dt-idx="1" tabindex="0">2</button><button class="dt-paging-button next" role="link" type="button" aria-controls="product-list-view" aria-label="Next" data-dt-idx="next" tabindex="0">›</button><button class="dt-paging-button last" role="link" type="button" aria-controls="product-list-view" aria-label="Last" data-dt-idx="last" tabindex="0">»</button></div></div></div></div>
+                      -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Container-fluid Ends-->
+				</div>
+			</div>
+		</div>
+			<!--Modal-->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdrop" aria-hidden="true">
+ <div class="modal-dialog">
+   <div class="modal-content">
+     <div class="modal-body"> 
+       <div class="modal-toggle-wrapper">  
+         <div class="card-body animated-form">
+                    <form class="row g-3 needs-validation custom-input" novalidate="">
+                      <div class="col-12 position-relative">
+                        <label class="form-label" for="validationTooltipName">Client Name</label>
+                        <input class="success form-control" id="validationTooltipName" type="text" placeholder="Enter name" required="">
+                      </div>
+                      <div class="col-12 position-relative">
+                        <label class="form-label" for="validationTooltipGmail">Email</label>
+                        <input class="success form-control" id="validationTooltipGmail" type="email" placeholder="pixelstrap@mail.com" required="">
+                      </div>
+                      <div class="col-lg-6 position-relative">
+                        <label class="col-form-label" for="inputTooltipPassword">Number</label>
+                        <input class="success form-control" id="inputTooltipPassword" type="number" placeholder="Enter Number" required="">
+                      </div>
+                      <div class="col-lg-6 position-relative">
+                        <label class="col-form-label" for="inputConfirmPassword">Address</label>
+                        <input class="success form-control" id="inputConfirmPassword" type="text" placeholder="Enter Address" required="">
+                      </div>
+                      <div class="col-lg-6 position-relative">
+                        <label class="col-form-label" for="inputCIty">City</label>
+                        <input class="success form-control" id="inputCIty" type="text" placeholder="Enter City" required="">
+                      </div>
+                      <div class="col-lg-6 position-relative">
+                        <label class="col-form-label" for="inputCIty">Status</label>
+                        <input class="checkbox_animated" id="chk-ani4" type="checkbox">
+                      </div>
+                      <div class="col-6">
+                        <button class="btn btn-primary" type="submit">Submit form                    </button>
+                      </div>
+                       <div class="col-6">
+                       <button class="btn btn-warning d-flex m-auto" type="button" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </form>
+                  </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+	</div>
+	<!--  </section> -->
+
+</body>
